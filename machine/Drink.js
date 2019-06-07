@@ -11,12 +11,6 @@ class Drink extends React.Component {
     }
   }
 
-  onClickGetButton(){
-    this.props.item.quantity = this.props.item.quantity -1;
-    console.log(this.props.item.quantity);
-    console.log(this.props.item)
-  }
-
   render() {
     const { item } = this.props;
     return (
