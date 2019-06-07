@@ -47,23 +47,29 @@ class VendingMachine extends React.Component {
         },
 
       ]
+      ,log:null
     }
+  }
+
+  onClickState(){
+    this.setState({...this.state,log:JSON.stringify(this.state.items)})
   }
 
   render() {
     const { items } = this.state;
     const layout = []
-    for(let i =0 ; i<items.length; i){
+    for (let i = 0; i < items.length; i) {
       layout.push(
         <SegmentGroup horizontal>
-          <Drink item={items[i++]}/>
-          <Drink item={items[i++]}/>
-          <Drink item={items[i++]}/>
-          <Drink item={items[i++]}/>
+          <Drink item={items[i++]} />
+          <Drink item={items[i++]} />
+          <Drink item={items[i++]} />
+          <Drink item={items[i++]} />
         </SegmentGroup>
       )
     }
     return (
+      <Fragment>
         <SegmentGroup size='small'>
           <Segment inverted color='blue' floated='left'>
             <SegmentGroup vertical>
@@ -77,6 +83,13 @@ class VendingMachine extends React.Component {
             </SegmentGroup>
           </Segment>
         </SegmentGroup>
+        <div>
+        <Button onClick={()=>this.onClickState()}>test</Button>
+        {
+          this.state.log
+        }
+        </div>
+      </Fragment>
     )
   }
 }
