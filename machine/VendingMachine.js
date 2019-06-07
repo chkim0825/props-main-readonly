@@ -51,10 +51,6 @@ class VendingMachine extends React.Component {
     }
   }
 
-  onClickState(){
-    this.setState({...this.state,log:JSON.stringify(this.state.items)})
-  }
-
   render() {
     const { items } = this.state;
     const layout = []
