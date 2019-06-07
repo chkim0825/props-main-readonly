@@ -57,7 +57,6 @@ class VendingMachine extends React.Component {
           <Segment inverted color='blue' floated='left'>
             <SegmentGroup vertical>
               <SegmentGroup horizontal>
-              <Drink item={items[0]}/>
               </SegmentGroup>
             </SegmentGroup>
             <InputPanel />
